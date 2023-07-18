@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-NBND3S2D.js"></script>
-    <script src="dist/sidebar_items-6AEA4CC8.js"></script>
+    <script src="dist/sidebar_items-464CCF60.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -121,6 +121,26 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#t:item/0" translate="no">item()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree item - a key/value pair.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:iterator/0" translate="no">iterator()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree iterator.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#t:key/0" translate="no">key()</a>
 
       </div>
@@ -135,7 +155,7 @@ merkle_tree
 
       </div>
 
-        <div class="summary-synopsis"><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options</p></div>
+        <div class="summary-synopsis"><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p></div>
 
     </div>
 
@@ -164,6 +184,16 @@ merkle_tree
   <h2>
     <a href="#functions">Functions</a>
   </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#compute_hashes/1" translate="no">compute_hashes(mt)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Compute the tree hashes.</p></div>
+
+    </div>
 
     <div class="summary-row">
       <div class="summary-signature">
@@ -197,6 +227,16 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#first/1" translate="no">first(merkle_tree)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the first <code class="inline">{key, value}</code> (according to the merkle tree order).</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#has_key?/2" translate="no">has_key?(merkle_tree, key)</a>
 
       </div>
@@ -207,11 +247,31 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#iterator/1" translate="no">iterator(mt)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#keys/1" translate="no">keys(merkle_tree)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Returns all keys in the tree.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#last/1" translate="no">last(merkle_tree)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the last <code class="inline">{key, value}</code> (according to the merkle tree order).</p></div>
 
     </div>
 
@@ -247,6 +307,16 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#next/1" translate="no">next(arg)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the next key in the iteration.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#put/3" translate="no">put(merkle_tree, key, value)</a>
 
       </div>
@@ -265,16 +335,6 @@ merkle_tree
 
     </div>
 
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#update_hashes/1" translate="no">update_hashes(mt)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Update the tree hashes.</p></div>
-
-    </div>
-
 </div>
 
   </section>
@@ -288,6 +348,54 @@ Types
       </a>
     </h1>
     <div class="types-list">
+<section class="detail" id="t:item/0">
+
+  <div class="detail-header">
+    <a href="#t:item/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">item()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> item() :: {<a href="#t:key/0">key</a>(), <a href="#t:value/0">value</a>()}</pre>
+
+      </div>
+
+<p>A tree item - a key/value pair.</p>
+  </section>
+</section>
+<section class="detail" id="t:iterator/0">
+
+  <div class="detail-header">
+    <a href="#t:iterator/0" class="detail-link" title="Link to this opaque">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this opaque</span>
+    </a>
+    <h1 class="signature" translate="no">iterator()</h1>
+
+
+      <span class="note">(opaque)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@opaque</span> iterator()</pre>
+
+      </div>
+
+<p>A tree iterator.</p>
+  </section>
+</section>
 <section class="detail" id="t:key/0">
 
   <div class="detail-header">
@@ -327,12 +435,12 @@ Types
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@type</span> opts() :: [{:auto_update_hash, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}]</pre>
+          <pre translate="no"><span class="attribute">@type</span> opts() :: [{:auto_comp_hash, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}]</pre>
 
       </div>
 
-<p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options:</p><ul><li><code class="inline">auto_update_hash</code>: tree hashes are updated on every <a href="#put/3"><code class="inline">put/3</code></a> / <a href="#delete/2"><code class="inline">delete/2</code></a>.
-If set to <code class="inline">false</code> hashes should be explicitly computed calling <a href="#update_hashes/1"><code class="inline">update_hashes/1</code></a> before
+<p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p><ul><li><code class="inline">auto_comp_hash</code>: tree hashes are computed on every <a href="#put/3"><code class="inline">put/3</code></a> / <a href="#delete/2"><code class="inline">delete/2</code></a>.
+If set to <code class="inline">false</code> hashes should be explicitly computed calling <a href="#compute_hashes/1"><code class="inline">compute_hashes/1</code></a> before
 calling functions like <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>. Defaults to <code class="inline">true</code>.</li></ul>
   </section>
 </section>
@@ -394,6 +502,29 @@ Functions
       </a>
     </h1>
     <div class="functions-list">
+<section class="detail" id="compute_hashes/1">
+
+  <div class="detail-header">
+    <a href="#compute_hashes/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">compute_hashes(mt)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> compute_hashes(<a href="#t:t/0">t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+
+      </div>
+
+<p>Compute the tree hashes.</p><p>Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="delete/2">
 
   <div class="detail-header">
@@ -438,7 +569,7 @@ Functions
       </div>
 
 <p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
-uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_update_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
+uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="fetch/2">
@@ -464,6 +595,29 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
 <p>Fetches a key value from the tree.</p>
   </section>
 </section>
+<section class="detail" id="first/1">
+
+  <div class="detail-header">
+    <a href="#first/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">first(merkle_tree)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> first(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
+
+      </div>
+
+<p>Returns the first <code class="inline">{key, value}</code> (according to the merkle tree order).</p>
+  </section>
+</section>
 <section class="detail" id="has_key?/2">
 
   <div class="detail-header">
@@ -485,6 +639,29 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
       </div>
 
 <p>Returns whether the given key exists in the tree.</p>
+  </section>
+</section>
+<section class="detail" id="iterator/1">
+
+  <div class="detail-header">
+    <a href="#iterator/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">iterator(mt)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> iterator(<a href="#t:t/0">t</a>()) :: <a href="#t:iterator/0">iterator</a>()</pre>
+
+      </div>
+
+<p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p><p>The iteration algorithm doesn't need to build the complete list of all elements at one time.</p>
   </section>
 </section>
 <section class="detail" id="keys/1">
@@ -510,6 +687,29 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
 <p>Returns all keys in the tree.</p>
   </section>
 </section>
+<section class="detail" id="last/1">
+
+  <div class="detail-header">
+    <a href="#last/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">last(merkle_tree)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> last(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
+
+      </div>
+
+<p>Returns the last <code class="inline">{key, value}</code> (according to the merkle tree order).</p>
+  </section>
+</section>
 <section class="detail" id="merkle_diff/2">
 
   <div class="detail-header">
@@ -531,7 +731,7 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
       </div>
 
 <p>Returns the keys that differ (changed / removed / added) between two trees.</p><p>The diff is computed leveraging the merkle tree hashes and hence
-in case of hash collisions a wrong result could be returned.</p><p>More preciselly the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_update_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
+in case of hash collisions a wrong result could be returned.</p><p>More preciselly the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
   </section>
 </section>
 <section class="detail" id="merkle_equal?/2">
@@ -556,7 +756,7 @@ in case of hash collisions a wrong result could be returned.</p><p>More precisel
 
 <p>Checks if two trees are (merkle) equal.</p><p>The equality is checked leveraging the merkle tree hashes and hence
 in case of hash collisions a wrong result could be returned.</p><p>More precisely if it reports that the trees are different than this is 100% true,
-otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_update_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#equal?/2"><code class="inline">equal?/2</code></a>.</p>
+otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#equal?/2"><code class="inline">equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="new/2">
@@ -585,6 +785,29 @@ otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the
 
 <p>Create a new <a href="#t:t/0"><code class="inline">MerkleTree.t/0</code></a> from an optional enumerable of key-&gt;value pairs.</p><p>If <code class="inline">enumerable</code> is not provided it creates an empty tree.
 The <code class="inline">opts</code> optional parameter can be provided to customize the tree behaviour (refer to <code class="inline">t:opts/1</code>).</p>
+  </section>
+</section>
+<section class="detail" id="next/1">
+
+  <div class="detail-header">
+    <a href="#next/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">next(arg)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> next(<a href="#t:iterator/0">iterator</a>()) :: {<a href="#t:item/0">item</a>(), <a href="#t:iterator/0">iterator</a>()} | nil</pre>
+
+      </div>
+
+<p>Returns the next key in the iteration.</p><p>See also <a href="#iterator/1"><code class="inline">iterator/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="put/3">
@@ -631,29 +854,6 @@ The <code class="inline">opts</code> optional parameter can be provided to custo
       </div>
 
 <p>Returns the number of keys stored in the tree.</p>
-  </section>
-</section>
-<section class="detail" id="update_hashes/1">
-
-  <div class="detail-header">
-    <a href="#update_hashes/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">update_hashes(mt)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> update_hashes(<a href="#t:t/0">t</a>()) :: <a href="#t:t/0">t</a>()</pre>
-
-      </div>
-
-<p>Update the tree hashes.</p><p>Refer to <code class="inline">:auto_update_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>.</p>
   </section>
 </section>
 

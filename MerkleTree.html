@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-NBND3S2D.js"></script>
-    <script src="dist/sidebar_items-CAA21C3D.js"></script>
+    <script src="dist/sidebar_items-5C735780.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -104,24 +104,7 @@ merkle_tree
 
   <section id="moduledoc">
 <h1>MerkleTree</h1><p><a href="https://github.com/visciang/merkle_tree/actions/workflows/ci.yml"><img src="https://github.com/visciang/merkle_tree/actions/workflows/ci.yml/badge.svg" alt="CI"/></a>
-<a href="https://visciang.github.io/merkle_tree/readme.html"><img src="https://img.shields.io/badge/docs-latest-green.svg" alt="Docs"/></a> <a href="https://coveralls.io/github/visciang/merkle_tree?branch=main"><img src="https://coveralls.io/repos/github/visciang/merkle_tree/badge.svg?branch=main" alt="Coverage Status"/></a></p><p>(Sparse) Merkle Tree.</p><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> implements <a href="https://hexdocs.pm/elixir/Enumerable.html"><code class="inline">Enumerable</code></a> and <a href="https://hexdocs.pm/elixir/Collectable.html"><code class="inline">Collectable</code></a> protocols.</p><h2 id="module-quick-start" class="section-heading">
-  <a href="#module-quick-start">
-    <i class="ri-link-m" aria-hidden="true"></i>
-    Quick start
-  </a>
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="n">mt1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0096031405-1">(</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="0096031405-1">)</span><span class="w">
-
-</span><span class="n">mt2</span><span class="w"> </span><span class="o">=</span><span class="w">
-    </span><span class="n">mt1</span><span class="w">
-    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="0096031405-2">(</span><span class="ss">:a</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="0096031405-2">)</span><span class="w">
-    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">delete</span><span class="p" data-group-id="0096031405-3">(</span><span class="ss">:c</span><span class="p" data-group-id="0096031405-3">)</span><span class="w">
-    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="0096031405-4">(</span><span class="ss">:d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="0096031405-4">)</span><span class="w">
-
-</span><span class="mi">3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">size</span><span class="p" data-group-id="0096031405-5">(</span><span class="n">mt1</span><span class="p" data-group-id="0096031405-5">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">size</span><span class="p" data-group-id="0096031405-6">(</span><span class="n">mt2</span><span class="p" data-group-id="0096031405-6">)</span><span class="w">
-</span><span class="no">false</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">merkle_equal?</span><span class="p" data-group-id="0096031405-7">(</span><span class="n">mt1</span><span class="p">,</span><span class="w"> </span><span class="n">mt2</span><span class="p" data-group-id="0096031405-7">)</span><span class="w">
-</span><span class="p" data-group-id="0096031405-8">[</span><span class="p" data-group-id="0096031405-9">{</span><span class="ss">:add</span><span class="p">,</span><span class="w"> </span><span class="ss">:d</span><span class="p" data-group-id="0096031405-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0096031405-10">{</span><span class="ss">:upd</span><span class="p">,</span><span class="w"> </span><span class="ss">:a</span><span class="p" data-group-id="0096031405-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0096031405-11">{</span><span class="ss">:del</span><span class="p">,</span><span class="w"> </span><span class="ss">:c</span><span class="p" data-group-id="0096031405-11">}</span><span class="p" data-group-id="0096031405-8">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MerkleTree</span><span class="o">.</span><span class="n">merkle_diff</span><span class="p" data-group-id="0096031405-12">(</span><span class="n">mt1</span><span class="p">,</span><span class="w"> </span><span class="n">mt2</span><span class="p" data-group-id="0096031405-12">)</span><span class="w">
-</span><span class="p" data-group-id="0096031405-13">%{</span><span class="ss">c</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="0096031405-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Map</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0096031405-14">(</span><span class="n">mt1</span><span class="p" data-group-id="0096031405-14">)</span></code></pre>
+<a href="https://visciang.github.io/merkle_tree/readme.html"><img src="https://img.shields.io/badge/docs-latest-green.svg" alt="Docs"/></a> <a href="https://coveralls.io/github/visciang/merkle_tree?branch=main"><img src="https://coveralls.io/repos/github/visciang/merkle_tree/badge.svg?branch=main" alt="Coverage Status"/></a></p><p>(Sparse) Merkle Tree.</p><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> implements <a href="https://hexdocs.pm/elixir/Enumerable.html"><code class="inline">Enumerable</code></a> and <a href="https://hexdocs.pm/elixir/Collectable.html"><code class="inline">Collectable</code></a> protocols.</p>
   </section>
 
 
@@ -198,9 +181,9 @@ merkle_tree
     </div>
 
 </div>
-<div class="summary-functions summary">
+<div class="summary-basic summary">
   <h2>
-    <a href="#functions">Functions</a>
+    <a href="#basic">Basic</a>
   </h2>
 
     <div class="summary-row">
@@ -225,31 +208,11 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#equal?/2" translate="no">equal?(mt1, mt2)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Checks if two trees are equal.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#fetch/2" translate="no">fetch(merkle_tree, key)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Fetches a key value from the tree.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#first/1" translate="no">first(merkle_tree)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Returns the first <code class="inline">{key, value}</code> (according to the merkle tree order).</p></div>
 
     </div>
 
@@ -265,16 +228,6 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#iterator/1" translate="no">iterator(mt)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#keys/1" translate="no">keys(merkle_tree)</a>
 
       </div>
@@ -285,51 +238,11 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#last/1" translate="no">last(merkle_tree)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Returns the last <code class="inline">{key, value}</code> (according to the merkle tree order).</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#merkle_diff/2" translate="no">merkle_diff(merkle_tree1, merkle_tree2)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Returns the keys that differ (changed / removed / added) between two trees.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#merkle_equal?/2" translate="no">merkle_equal?(merkle_tree1, merkle_tree2)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Checks if two trees are (merkle) equal.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#new/2" translate="no">new(enum \\ nil, opts \\ [])</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Create a new <a href="#t:t/0"><code class="inline">MerkleTree.t/0</code></a> from an optional enumerable of key-&gt;value pairs.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#next/1" translate="no">next(arg)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Returns the next key in the iteration.</p></div>
 
     </div>
 
@@ -350,6 +263,88 @@ merkle_tree
       </div>
 
         <div class="summary-synopsis"><p>Returns the number of keys stored in the tree.</p></div>
+
+    </div>
+
+</div>
+<div class="summary-iteration summary">
+  <h2>
+    <a href="#iteration">Iteration</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#first/1" translate="no">first(merkle_tree)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the first <code class="inline">{key, value}</code> according to the merkle tree order.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#iterator/1" translate="no">iterator(mt)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#last/1" translate="no">last(merkle_tree)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the last <code class="inline">{key, value}</code> according to the merkle tree order.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#next/1" translate="no">next(arg)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the next key in the iteration.</p></div>
+
+    </div>
+
+</div>
+<div class="summary-difference-equality summary">
+  <h2>
+    <a href="#difference-equality">Difference / Equality</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#equal?/2" translate="no">equal?(mt1, mt2)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if two trees are equal.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#merkle_diff/2" translate="no">merkle_diff(merkle_tree1, merkle_tree2)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the keys that differ (added / deleted / updated) between two trees.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#merkle_equal?/2" translate="no">merkle_equal?(merkle_tree1, merkle_tree2)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if two trees are (merkle) equal.</p></div>
 
     </div>
 
@@ -512,14 +507,14 @@ calling functions like <a href="#merkle_equal?/2"><code class="inline">merkle_eq
     </div>
   </section>
 
-  <section id="functions" class="details-list">
+  <section id="basic" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#basic">
         <i class="ri-link-m" aria-hidden="true"></i>
-Functions
+Basic
       </a>
     </h1>
-    <div class="functions-list">
+    <div class="basic-list">
 <section class="detail" id="compute_hashes/1">
 
   <div class="detail-header">
@@ -566,30 +561,6 @@ Functions
 <p>Deletes a tree key.</p>
   </section>
 </section>
-<section class="detail" id="equal?/2">
-
-  <div class="detail-header">
-    <a href="#equal?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">equal?(mt1, mt2)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
-
-      </div>
-
-<p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
-uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
-  </section>
-</section>
 <section class="detail" id="fetch/2">
 
   <div class="detail-header">
@@ -611,29 +582,6 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
       </div>
 
 <p>Fetches a key value from the tree.</p>
-  </section>
-</section>
-<section class="detail" id="first/1">
-
-  <div class="detail-header">
-    <a href="#first/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">first(merkle_tree)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> first(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
-
-      </div>
-
-<p>Returns the first <code class="inline">{key, value}</code> (according to the merkle tree order).</p>
   </section>
 </section>
 <section class="detail" id="has_key?/2">
@@ -659,29 +607,6 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
 <p>Returns whether the given key exists in the tree.</p>
   </section>
 </section>
-<section class="detail" id="iterator/1">
-
-  <div class="detail-header">
-    <a href="#iterator/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">iterator(mt)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> iterator(<a href="#t:t/0">t</a>()) :: <a href="#t:iterator/0">iterator</a>()</pre>
-
-      </div>
-
-<p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p><p>The iteration algorithm doesn't need to build the complete list of all elements at one time.</p>
-  </section>
-</section>
 <section class="detail" id="keys/1">
 
   <div class="detail-header">
@@ -703,78 +628,6 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
       </div>
 
 <p>Returns all keys in the tree.</p>
-  </section>
-</section>
-<section class="detail" id="last/1">
-
-  <div class="detail-header">
-    <a href="#last/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">last(merkle_tree)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> last(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
-
-      </div>
-
-<p>Returns the last <code class="inline">{key, value}</code> (according to the merkle tree order).</p>
-  </section>
-</section>
-<section class="detail" id="merkle_diff/2">
-
-  <div class="detail-header">
-    <a href="#merkle_diff/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">merkle_diff(merkle_tree1, merkle_tree2)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> merkle_diff(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: [{:add | :del | :upd, <a href="#t:key/0">key</a>()}]</pre>
-
-      </div>
-
-<p>Returns the keys that differ (changed / removed / added) between two trees.</p><p>The diff is computed leveraging the merkle tree hashes and hence
-in case of hash collisions a wrong result could be returned.</p><p>More preciselly the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
-  </section>
-</section>
-<section class="detail" id="merkle_equal?/2">
-
-  <div class="detail-header">
-    <a href="#merkle_equal?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">merkle_equal?(merkle_tree1, merkle_tree2)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> merkle_equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
-
-      </div>
-
-<p>Checks if two trees are (merkle) equal.</p><p>The equality is checked leveraging the merkle tree hashes and hence
-in case of hash collisions a wrong result could be returned.</p><p>More precisely if it reports that the trees are different than this is 100% true,
-otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#equal?/2"><code class="inline">equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="new/2">
@@ -803,29 +656,6 @@ otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the
 
 <p>Create a new <a href="#t:t/0"><code class="inline">MerkleTree.t/0</code></a> from an optional enumerable of key-&gt;value pairs.</p><p>If <code class="inline">enumerable</code> is not provided it creates an empty tree.
 The <code class="inline">opts</code> optional parameter can be provided to customize the tree behaviour (refer to <code class="inline">t:opts/1</code>).</p>
-  </section>
-</section>
-<section class="detail" id="next/1">
-
-  <div class="detail-header">
-    <a href="#next/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">next(arg)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> next(<a href="#t:iterator/0">iterator</a>()) :: {<a href="#t:item/0">item</a>(), <a href="#t:iterator/0">iterator</a>()} | nil</pre>
-
-      </div>
-
-<p>Returns the next key in the iteration.</p><p>See also <a href="#iterator/1"><code class="inline">iterator/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="put/3">
@@ -872,6 +702,195 @@ The <code class="inline">opts</code> optional parameter can be provided to custo
       </div>
 
 <p>Returns the number of keys stored in the tree.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="iteration" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#iteration">
+        <i class="ri-link-m" aria-hidden="true"></i>
+Iteration
+      </a>
+    </h1>
+    <div class="iteration-list">
+<section class="detail" id="first/1">
+
+  <div class="detail-header">
+    <a href="#first/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">first(merkle_tree)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> first(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
+
+      </div>
+
+<p>Returns the first <code class="inline">{key, value}</code> according to the merkle tree order.</p>
+  </section>
+</section>
+<section class="detail" id="iterator/1">
+
+  <div class="detail-header">
+    <a href="#iterator/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">iterator(mt)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> iterator(<a href="#t:t/0">t</a>()) :: <a href="#t:iterator/0">iterator</a>()</pre>
+
+      </div>
+
+<p>Returns an iterator over the tree items, the iteration follows the merkle key tree order.</p><p>The iteration algorithm doesn't need to build the complete list of all elements at one time.</p>
+  </section>
+</section>
+<section class="detail" id="last/1">
+
+  <div class="detail-header">
+    <a href="#last/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">last(merkle_tree)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> last(<a href="#t:t/0">t</a>()) :: <a href="#t:item/0">item</a>() | nil</pre>
+
+      </div>
+
+<p>Returns the last <code class="inline">{key, value}</code> according to the merkle tree order.</p>
+  </section>
+</section>
+<section class="detail" id="next/1">
+
+  <div class="detail-header">
+    <a href="#next/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">next(arg)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> next(<a href="#t:iterator/0">iterator</a>()) :: {<a href="#t:item/0">item</a>(), <a href="#t:iterator/0">iterator</a>()} | nil</pre>
+
+      </div>
+
+<p>Returns the next key in the iteration.</p><p>See also <a href="#iterator/1"><code class="inline">iterator/1</code></a>.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="difference-equality" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#difference-equality">
+        <i class="ri-link-m" aria-hidden="true"></i>
+Difference / Equality
+      </a>
+    </h1>
+    <div class="difference-equality-list">
+<section class="detail" id="equal?/2">
+
+  <div class="detail-header">
+    <a href="#equal?/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">equal?(mt1, mt2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
+uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="merkle_diff/2">
+
+  <div class="detail-header">
+    <a href="#merkle_diff/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">merkle_diff(merkle_tree1, merkle_tree2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> merkle_diff(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: [{:add | :del | :upd, <a href="#t:key/0">key</a>()}]</pre>
+
+      </div>
+
+<p>Returns the keys that differ (added / deleted / updated) between two trees.</p><p>The diff is computed leveraging the merkle tree hashes and hence
+in case of hash collisions a wrong result could be returned.</p><p>More preciselly the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
+  </section>
+</section>
+<section class="detail" id="merkle_equal?/2">
+
+  <div class="detail-header">
+    <a href="#merkle_equal?/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">merkle_equal?(merkle_tree1, merkle_tree2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> merkle_equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if two trees are (merkle) equal.</p><p>The equality is checked leveraging the merkle tree hashes and hence
+in case of hash collisions a wrong result could be returned.</p><p>More precisely if it reports that the trees are different than this is 100% true,
+otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#equal?/2"><code class="inline">equal?/2</code></a>.</p>
   </section>
 </section>
 

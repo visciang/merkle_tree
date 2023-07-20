@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-NBND3S2D.js"></script>
-    <script src="dist/sidebar_items-5C735780.js"></script>
+    <script src="dist/sidebar_items-1B8FC526.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -119,6 +119,22 @@ merkle_tree
   <h2>
     <a href="#types">Types</a>
   </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:diff_act/0" translate="no">diff_act()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:diff_op/0" translate="no">diff_op()</a>
+
+      </div>
+
+    </div>
 
     <div class="summary-row">
       <div class="summary-signature">
@@ -320,6 +336,16 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#diff/2" translate="no">diff(mt1, mt2)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the diff between two trees.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#equal?/2" translate="no">equal?(mt1, mt2)</a>
 
       </div>
@@ -334,7 +360,7 @@ merkle_tree
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the keys that differ (added / deleted / updated) between two trees.</p></div>
+        <div class="summary-synopsis"><p>Returns the diff between two trees.</p></div>
 
     </div>
 
@@ -361,6 +387,52 @@ Types
       </a>
     </h1>
     <div class="types-list">
+<section class="detail" id="t:diff_act/0">
+
+  <div class="detail-header">
+    <a href="#t:diff_act/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">diff_act()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> diff_act() :: :add | :del | :upd</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:diff_op/0">
+
+  <div class="detail-header">
+    <a href="#t:diff_op/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">diff_op()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> diff_op() :: {<a href="#t:diff_act/0">diff_act</a>(), <a href="#t:key/0">key</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="t:item/0">
 
   <div class="detail-header">
@@ -820,6 +892,30 @@ Difference / Equality
       </a>
     </h1>
     <div class="difference-equality-list">
+<section class="detail" id="diff/2">
+
+  <div class="detail-header">
+    <a href="#diff/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">diff(mt1, mt2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> diff(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: [<a href="#t:diff_op/0">diff_op</a>()]</pre>
+
+      </div>
+
+<p>Returns the diff between two trees.</p><p>The diff is expressed as add/delete/update operation to apply to the first
+tree to get to the second one.</p><p>The diff is NOT computed leveraging the merkle tree hashes.</p>
+  </section>
+</section>
 <section class="detail" id="equal?/2">
 
   <div class="detail-header">
@@ -841,7 +937,7 @@ Difference / Equality
       </div>
 
 <p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
-uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
+uncertainty with a default element by element comparison.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="merkle_diff/2">
@@ -860,12 +956,14 @@ uncertaintainty with a default comparison algorithm.</p><p>Raises if the hashes 
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> merkle_diff(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: [{:add | :del | :upd, <a href="#t:key/0">key</a>()}]</pre>
+          <pre translate="no"><span class="attribute">@spec</span> merkle_diff(from :: <a href="#t:t/0">t</a>(), to :: <a href="#t:t/0">t</a>()) :: [<a href="#t:diff_op/0">diff_op</a>()]</pre>
 
       </div>
 
-<p>Returns the keys that differ (added / deleted / updated) between two trees.</p><p>The diff is computed leveraging the merkle tree hashes and hence
-in case of hash collisions a wrong result could be returned.</p><p>More preciselly the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
+<p>Returns the diff between two trees.</p><p>The diff is expressed as add/delete/update operation to apply to the first
+tree to get to the second one.</p><p>The diff is computed leveraging the merkle tree hashes and hence
+in case of hash collisions a wrong result could be returned.
+More precisely the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
   </section>
 </section>
 <section class="detail" id="merkle_equal?/2">
@@ -889,7 +987,8 @@ in case of hash collisions a wrong result could be returned.</p><p>More precisel
       </div>
 
 <p>Checks if two trees are (merkle) equal.</p><p>The equality is checked leveraging the merkle tree hashes and hence
-in case of hash collisions a wrong result could be returned.</p><p>More precisely if it reports that the trees are different than this is 100% true,
+in case of hash collisions a wrong result could be returned.
+More precisely if it reports that the trees are different than this is 100% true,
 otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#equal?/2"><code class="inline">equal?/2</code></a>.</p>
   </section>
 </section>

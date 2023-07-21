@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-NBND3S2D.js"></script>
-    <script src="dist/sidebar_items-1B8FC526.js"></script>
+    <script src="dist/sidebar_items-1A9C5424.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -234,7 +234,7 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#has_key?/2" translate="no">has_key?(merkle_tree, key)</a>
+        <a href="#has_key?/2" translate="no">has_key?(mt, key)</a>
 
       </div>
 
@@ -329,9 +329,9 @@ merkle_tree
     </div>
 
 </div>
-<div class="summary-difference-equality summary">
+<div class="summary-difference summary">
   <h2>
-    <a href="#difference-equality">Difference / Equality</a>
+    <a href="#difference">Difference</a>
   </h2>
 
     <div class="summary-row">
@@ -346,21 +346,27 @@ merkle_tree
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#equal?/2" translate="no">equal?(mt1, mt2)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Checks if two trees are equal.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#merkle_diff/2" translate="no">merkle_diff(merkle_tree1, merkle_tree2)</a>
 
       </div>
 
         <div class="summary-synopsis"><p>Returns the diff between two trees.</p></div>
+
+    </div>
+
+</div>
+<div class="summary-equality summary">
+  <h2>
+    <a href="#equality">Equality</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#equal?/2" translate="no">equal?(mt1, mt2)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if two trees are equal.</p></div>
 
     </div>
 
@@ -663,7 +669,7 @@ Basic
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">has_key?(merkle_tree, key)</h1>
+    <h1 class="signature" translate="no">has_key?(mt, key)</h1>
 
 
   </div>
@@ -884,14 +890,14 @@ Iteration
     </div>
   </section>
 
-  <section id="difference-equality" class="details-list">
+  <section id="difference" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#difference-equality">
+      <a class="hover-link" href="#difference">
         <i class="ri-link-m" aria-hidden="true"></i>
-Difference / Equality
+Difference
       </a>
     </h1>
-    <div class="difference-equality-list">
+    <div class="difference-list">
 <section class="detail" id="diff/2">
 
   <div class="detail-header">
@@ -908,36 +914,12 @@ Difference / Equality
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> diff(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: [<a href="#t:diff_op/0">diff_op</a>()]</pre>
+          <pre translate="no"><span class="attribute">@spec</span> diff(from :: <a href="#t:t/0">t</a>(), to :: <a href="#t:t/0">t</a>()) :: [<a href="#t:diff_op/0">diff_op</a>()]</pre>
 
       </div>
 
 <p>Returns the diff between two trees.</p><p>The diff is expressed as add/delete/update operation to apply to the first
 tree to get to the second one.</p><p>The diff is NOT computed leveraging the merkle tree hashes.</p>
-  </section>
-</section>
-<section class="detail" id="equal?/2">
-
-  <div class="detail-header">
-    <a href="#equal?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">equal?(mt1, mt2)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
-
-      </div>
-
-<p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
-uncertainty with a default element by element comparison.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="merkle_diff/2">
@@ -964,6 +946,42 @@ uncertainty with a default element by element comparison.</p><p>Raises if the ha
 tree to get to the second one.</p><p>The diff is computed leveraging the merkle tree hashes and hence
 in case of hash collisions a wrong result could be returned.
 More precisely the diff reported is correct but could be incomplete.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="equality" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#equality">
+        <i class="ri-link-m" aria-hidden="true"></i>
+Equality
+      </a>
+    </h1>
+    <div class="equality-list">
+<section class="detail" id="equal?/2">
+
+  <div class="detail-header">
+    <a href="#equal?/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">equal?(mt1, mt2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> equal?(<a href="#t:t/0">t</a>(), <a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if two trees are equal.</p><p>The equality is first checked leveraging the merkle tree hashes and in case of
+uncertainty with a default element by element comparison.</p><p>Raises if the hashes are not calculated (Refer to <code class="inline">:auto_comp_hash</code> <a href="#t:opts/0"><code class="inline">opts/0</code></a>).</p><p>See also <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="merkle_equal?/2">

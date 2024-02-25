@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.30.2">
+    <meta name="generator" content="ExDoc v0.31.1">
     <meta name="project" content="merkle_tree v0.1.0">
 
+
     <title>MerkleTree — merkle_tree v0.1.0</title>
-    <link rel="stylesheet" href="dist/html-elixir-JUCHUGAD.css" />
+    <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-NBND3S2D.js"></script>
-    <script src="dist/sidebar_items-1A9C5424.js"></script>
+    <script src="dist/handlebars.templates-43PMFBC7.js"></script>
+    <script src="dist/sidebar_items-4CC14FC8.js"></script>
 
       <script src="docs_config.js"></script>
 
-    <script async src="dist/html-WC6MMJK3.js"></script>
+    <script async src="dist/html-L4O5OK2K.js"></script>
 
 
   </head>
@@ -38,63 +39,83 @@
 
 <div class="main">
 
-<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
-<section class="sidebar">
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button" aria-label="Submit Search">
-      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
-    </button>
-    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
-    </button>
-    <label class="search-label">
-      <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-    </label>
-  </form>
+<div class="background-layer"></div>
 
-  <div class="autocomplete">
-    <div class="autocomplete-results">
-    </div>
-  </div>
+<nav id="sidebar" class="sidebar">
 
   <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
 
-    <div class="sidebar-projectDetails">
-      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+      <div>
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 merkle_tree
-      </a>
-      <div class="sidebar-projectVersion" translate="no">
-        v0.1.0
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
       </div>
     </div>
-    <ul class="sidebar-listNav">
-      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
 
-        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
 
 
     </ul>
   </div>
 
-  <div class="gradient"></div>
-  <ul id="full-list"></ul>
-</section>
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
 
-<section class="content">
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
   <output role="status" id="toast"></output>
   <div class="content-outer">
     <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of merkle_tree</span>
+              <input name="q" type="text" class="search-input" placeholder="Search Documentation (press /)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
 
 <h1>
-<button class="icon-action display-settings">
-  <i class="ri-settings-3-line"></i>
-  <span class="sr-only">Settings</span>
-</button>
-
 
   <span translate="no">MerkleTree</span> 
   <small class="app-vsn" translate="no">(merkle_tree v0.1.0)</small>
@@ -112,91 +133,9 @@ merkle_tree
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
         <i class="ri-link-m" aria-hidden="true"></i>
-        Summary
       </a>
+      <span class="text">Summary</span>
     </h1>
-<div class="summary-types summary">
-  <h2>
-    <a href="#types">Types</a>
-  </h2>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:diff_act/0" translate="no">diff_act()</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:diff_op/0" translate="no">diff_op()</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:item/0" translate="no">item()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>A tree item - a key/value pair.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:iterator/0" translate="no">iterator()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>A tree iterator.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:key/0" translate="no">key()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>A tree key.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:opts/0" translate="no">opts()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:t/0" translate="no">t()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Merkle tree.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#t:value/0" translate="no">value()</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>A tree value.</p></div>
-
-    </div>
-
-</div>
 <div class="summary-basic summary">
   <h2>
     <a href="#basic">Basic</a>
@@ -381,216 +320,98 @@ merkle_tree
     </div>
 
 </div>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
 
-  </section>
-
-
-  <section id="types" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#types">
-        <i class="ri-link-m" aria-hidden="true"></i>
-Types
-      </a>
-    </h1>
-    <div class="types-list">
-<section class="detail" id="t:diff_act/0">
-
-  <div class="detail-header">
-    <a href="#t:diff_act/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">diff_act()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> diff_act() :: :add | :del | :upd</pre>
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:diff_act/0" translate="no">diff_act()</a>
 
       </div>
-
-
-  </section>
-</section>
-<section class="detail" id="t:diff_op/0">
-
-  <div class="detail-header">
-    <a href="#t:diff_op/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">diff_op()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> diff_op() :: {<a href="#t:diff_act/0">diff_act</a>(), <a href="#t:key/0">key</a>()}</pre>
-
-      </div>
-
-
-  </section>
-</section>
-<section class="detail" id="t:item/0">
-
-  <div class="detail-header">
-    <a href="#t:item/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">item()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> item() :: {<a href="#t:key/0">key</a>(), <a href="#t:value/0">value</a>()}</pre>
-
-      </div>
-
-<p>A tree item - a key/value pair.</p>
-  </section>
-</section>
-<section class="detail" id="t:iterator/0">
-
-  <div class="detail-header">
-    <a href="#t:iterator/0" class="detail-link" title="Link to this opaque">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this opaque</span>
-    </a>
-    <h1 class="signature" translate="no">iterator()</h1>
-
-
-      <span class="note">(opaque)</span>
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@opaque</span> iterator()</pre>
-
-      </div>
-
-<p>A tree iterator.</p>
-  </section>
-</section>
-<section class="detail" id="t:key/0">
-
-  <div class="detail-header">
-    <a href="#t:key/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">key()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> key() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()</pre>
-
-      </div>
-
-<p>A tree key.</p>
-  </section>
-</section>
-<section class="detail" id="t:opts/0">
-
-  <div class="detail-header">
-    <a href="#t:opts/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">opts()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> opts() :: [{:auto_comp_hash, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}]</pre>
-
-      </div>
-
-<p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p><ul><li><code class="inline">auto_comp_hash</code>: tree hashes are computed on every <a href="#put/3"><code class="inline">put/3</code></a> / <a href="#delete/2"><code class="inline">delete/2</code></a>.
-If set to <code class="inline">false</code> hashes should be explicitly computed calling <a href="#compute_hashes/1"><code class="inline">compute_hashes/1</code></a> before
-calling functions like <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>. Defaults to <code class="inline">true</code>.</li></ul>
-  </section>
-</section>
-<section class="detail" id="t:t/0">
-
-  <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">t()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> t() :: %MerkleTree{opts: <a href="#t:opts/0">opts</a>(), size: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), tree: tree()}</pre>
-
-      </div>
-
-<p>Merkle tree.</p>
-  </section>
-</section>
-<section class="detail" id="t:value/0">
-
-  <div class="detail-header">
-    <a href="#t:value/0" class="detail-link" title="Link to this type">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
-    </a>
-    <h1 class="signature" translate="no">value()</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@type</span> value() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()</pre>
-
-      </div>
-
-<p>A tree value.</p>
-  </section>
-</section>
 
     </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:diff_op/0" translate="no">diff_op()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:item/0" translate="no">item()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree item - a key/value pair.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:iterator/0" translate="no">iterator()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree iterator.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:key/0" translate="no">key()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree key.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:opts/0" translate="no">opts()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" translate="no">t()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Merkle tree.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:value/0" translate="no">value()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>A tree value.</p></div>
+
+    </div>
+
+</div>
+
   </section>
+
 
   <section id="basic" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#basic">
         <i class="ri-link-m" aria-hidden="true"></i>
-Basic
       </a>
+      <span class="text">Basic</span>
     </h1>
     <div class="basic-list">
 <section class="detail" id="compute_hashes/1">
@@ -790,8 +611,8 @@ The <code class="inline">opts</code> optional parameter can be provided to custo
     <h1 class="section-heading">
       <a class="hover-link" href="#iteration">
         <i class="ri-link-m" aria-hidden="true"></i>
-Iteration
       </a>
+      <span class="text">Iteration</span>
     </h1>
     <div class="iteration-list">
 <section class="detail" id="first/1">
@@ -894,8 +715,8 @@ Iteration
     <h1 class="section-heading">
       <a class="hover-link" href="#difference">
         <i class="ri-link-m" aria-hidden="true"></i>
-Difference
       </a>
+      <span class="text">Difference</span>
     </h1>
     <div class="difference-list">
 <section class="detail" id="diff/2">
@@ -956,8 +777,8 @@ More precisely the diff reported is correct but could be incomplete.</p><p>Raise
     <h1 class="section-heading">
       <a class="hover-link" href="#equality">
         <i class="ri-link-m" aria-hidden="true"></i>
-Equality
       </a>
+      <span class="text">Equality</span>
     </h1>
     <div class="equality-list">
 <section class="detail" id="equal?/2">
@@ -1014,6 +835,206 @@ otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the
     </div>
   </section>
 
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:diff_act/0">
+
+  <div class="detail-header">
+    <a href="#t:diff_act/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">diff_act()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> diff_act() :: :add | :del | :upd</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:diff_op/0">
+
+  <div class="detail-header">
+    <a href="#t:diff_op/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">diff_op()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> diff_op() :: {<a href="#t:diff_act/0">diff_act</a>(), <a href="#t:key/0">key</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:item/0">
+
+  <div class="detail-header">
+    <a href="#t:item/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">item()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> item() :: {<a href="#t:key/0">key</a>(), <a href="#t:value/0">value</a>()}</pre>
+
+      </div>
+
+<p>A tree item - a key/value pair.</p>
+  </section>
+</section>
+<section class="detail" id="t:iterator/0">
+
+  <div class="detail-header">
+    <a href="#t:iterator/0" class="detail-link" title="Link to this opaque">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this opaque</span>
+    </a>
+    <h1 class="signature" translate="no">iterator()</h1>
+
+
+      <span class="note">(opaque)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@opaque</span> iterator()</pre>
+
+      </div>
+
+<p>A tree iterator.</p>
+  </section>
+</section>
+<section class="detail" id="t:key/0">
+
+  <div class="detail-header">
+    <a href="#t:key/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">key()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> key() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()</pre>
+
+      </div>
+
+<p>A tree key.</p>
+  </section>
+</section>
+<section class="detail" id="t:opts/0">
+
+  <div class="detail-header">
+    <a href="#t:opts/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">opts()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> opts() :: [{:auto_comp_hash, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()}]</pre>
+
+      </div>
+
+<p><a href="MerkleTree.html#content"><code class="inline">MerkleTree</code></a> options.</p><ul><li><code class="inline">auto_comp_hash</code>: tree hashes are computed on every <a href="#put/3"><code class="inline">put/3</code></a> / <a href="#delete/2"><code class="inline">delete/2</code></a>.
+If set to <code class="inline">false</code> hashes should be explicitly computed calling <a href="#compute_hashes/1"><code class="inline">compute_hashes/1</code></a> before
+calling functions like <a href="#merkle_equal?/2"><code class="inline">merkle_equal?/2</code></a>. Defaults to <code class="inline">true</code>.</li></ul>
+  </section>
+</section>
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %MerkleTree{opts: <a href="#t:opts/0">opts</a>(), size: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(), tree: tree()}</pre>
+
+      </div>
+
+<p>Merkle tree.</p>
+  </section>
+</section>
+<section class="detail" id="t:value/0">
+
+  <div class="detail-header">
+    <a href="#t:value/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">value()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> value() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()</pre>
+
+      </div>
+
+<p>A tree value.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
       <footer class="footer">
         <p>
 
@@ -1027,7 +1048,7 @@ otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the
 
         <p class="built-using">
           Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.30.2) for the
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.1) for the
 
             <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
@@ -1035,7 +1056,7 @@ otherwise it means the trees are &quot;probably&quot; equal.</p><p>Raises if the
       </footer>
     </div>
   </div>
-</section>
+</main>
 </div>
 
 
